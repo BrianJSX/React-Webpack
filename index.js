@@ -1,5 +1,15 @@
+import "antd/dist/antd.css";
 import React from "react";
 import ReactDOM from "react-dom";
-import App from './src/App';
+import { Provider } from "react-redux";
+import App from "./src/App";
+import store from "./src/store";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);

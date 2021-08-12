@@ -1,11 +1,17 @@
 import React from "react";
-import Header from "./components/header";
+import {
+  BrowserRouter as Router, Route, Switch
+} from "react-router-dom";
+import Login from "./pages/Login";
+import "./scss/style.scss";
 
 export default function App() {
   return (
-    <div>
-      <Header></Header>
-      <h1>sadadsas</h1>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/login" component={Login}>
+        </Route>
+      </Switch>
+    </Router>
   );
 }

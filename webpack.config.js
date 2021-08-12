@@ -8,12 +8,13 @@ module.exports = {
     filename: "index.bundle.js",
     clean: true,
   },
-  mode: 'development',
-  devServer : {
-    contentBase: './dist',
-    port: 3000, 
+  mode: "development",
+  devServer: {
+    contentBase: "./dist",
+    port: 3000,
     open: true,
-    watchContentBase: true
+    watchContentBase: true,
+    historyApiFallback: true
   },
   module: {
     rules: [
@@ -24,23 +25,17 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env", "@babel/preset-react"],
+            plugins: ["@babel/transform-runtime"],
           },
         },
       },
       {
-        use: ['style-loader', 'css-loader'],
-        test: /\.css$/
+        use: ["style-loader", "css-loader"],
+        test: /\.css$/,
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
-          // Compiles Sass to CSS
-          "sass-loader",
-        ],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
