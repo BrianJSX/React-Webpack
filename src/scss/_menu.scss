@@ -1,0 +1,59 @@
+.menu {
+  &-header {
+    display: flex;
+    justify-content: center;
+    &__text {
+      background-color: rgb(248, 172, 32);
+      padding: 1rem 3rem;
+      border-radius: 0.5rem;
+      margin-top: -1rem;
+      z-index: 3;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      &:hover {
+        color: #fff;
+        background-color: rgb(226, 152, 41);
+      }
+    }
+  }
+  &-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 3rem;
+    flex-wrap: wrap;
+  }
+  &-item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    &:hover { 
+        color:rgb(226, 152, 41);
+    }
+    &__images {
+      display: block;
+      &:hover {
+        animation: hoverMenuImage 0.5s linear backwards;
+      }
+    }
+    &__name {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+  }
+}
+@keyframes hoverMenuImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}

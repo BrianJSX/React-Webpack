@@ -14,7 +14,7 @@ module.exports = {
     port: 3000,
     open: true,
     watchContentBase: true,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -37,6 +37,18 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
+      {
+        test: /\.(png|jpg|svg)$/,
+        loader: 'url-loader',
+      },
+      // {
+      //   test: /\.(png|jpg|svg)$/i,
+      //   loader: "file-loader",
+      //   options: {
+      //     name: "img/[name].[ext]",
+      //     publicPath: "/",
+      //   },
+      // },
     ],
   },
   plugins: [
