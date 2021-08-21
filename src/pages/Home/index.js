@@ -1,5 +1,6 @@
 import React from 'react'
 import Slider from '../../components/Slider'
+import Banner from '../../features/Banner'
 import Menu from '../../features/Menu';
 
 function Home() {
@@ -7,6 +8,7 @@ function Home() {
         <div className="homePage">
             <Slider></Slider>
             <Menu></Menu>
+            <Banner></Banner>
         </div>
     )
 }

@@ -37,7 +37,7 @@
     &__images {
       display: block;
       &:hover {
-        animation: hoverMenuImage 0.5s linear backwards;
+        animation: hoverMenuImage 0.2s linear forwards;
       }
     }
     &__name {

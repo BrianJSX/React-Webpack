@@ -1,0 +1,65 @@
+.banner {
+  background-color: #f7f2e2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 31px;
+  padding: 0 31px;
+
+  &-item {
+    position: relative;
+    margin: 31px 0;
+    padding: 41px;
+    background-color: #fff;
+    height: 240px;
+    border-radius: 20px;
+    display: flex;
+    &__text {
+      flex: 1;
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-row-gap: 10px;
+    }
+    &__content {
+      flex: 2;
+      position: relative;
+      @include position-center;
+    }
+    &__content:hover &__background {
+      animation: bannerScale .5s linear forwards;
+    }
+    &__background {
+      position: absolute;
+      background-color: red;
+      border-radius: 50%;
+      width: 170px;
+      height: 170px;
+    }
+    &__image {
+      position: absolute;
+      left: 0;
+      top: 20%;
+    }
+    &__header {
+      font-size: 1.5rem;
+      font-weight: bold;
+      line-height: 30px;
+    }
+    &__description {
+      font-size: 0.7rem;
+    }
+    &__price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: green;
+    }
+  }
+}
+@keyframes bannerScale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+
+}
