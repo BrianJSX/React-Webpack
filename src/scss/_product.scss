@@ -1,0 +1,123 @@
+.prodPopular {
+  &-header {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 50px;
+  }
+  &-category {
+    &__list {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      margin-top: 30px;
+    }
+    &__item {
+      padding: 0.5rem 2rem;
+      font-size: 1.2rem;
+      border: 1px solid rgb(192, 189, 189);
+      margin: 0.5rem;
+      border-radius: 5rem;
+      font-weight: 500;
+    }
+  }
+  &-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  &-item {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 480px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 15px;
+    border: 1px solid rgb(209, 208, 208);
+    &__header {
+      position: relative;
+      flex: 1.5;
+      border-radius: 20px;
+      &__background {
+        position: absolute;
+        background-color: #f3c11d;
+        border-radius: 20px;
+        opacity: 0.3;
+        width: 100%;
+        height: 50%;
+        bottom: 0;
+      }
+      &__image {
+        position: absolute;
+        width: 200px;
+        top: 15%;
+        left: 15%;
+      }
+    }
+    &:hover &__header__background {
+      animation: hoverOnProduct 0.5s ease both;
+    }
+    &:hover &__header__image {
+      animation: hoverOnProductImage 1s ease forwards;
+    }
+    &__content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      &__star {
+          color: #f3c11d;
+          font-size: 1rem;
+          margin-top: 20px;
+      }
+      &__name { 
+          font-size: 1.2rem;
+          font-weight: bold;
+      }
+      &__description  {
+        padding: 10px 0; 
+        font-size: .8rem;
+        color:rgb(192, 189, 189);
+      }
+      &__main { 
+          font-size: 1.2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          &__price { 
+              font-weight: bold;
+              color: #f3c11d;
+          }
+          &__cart { 
+              background-color: #f3c11d;
+              padding: 10px 15px;
+              border-radius: 20px;
+              cursor: pointer;
+          }
+      }
+    }
+  }
+}
+.prodActive {
+  background-color: #f3c11d;
+}
+
+@keyframes hoverOnProduct {
+  from {
+    height: 50%;
+    opacity: 0.3;
+  }
+  to {
+    height: 100%;
+    opacity: 1;
+  }
+}
+@keyframes hoverOnProductImage {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3);
+  }
+}
