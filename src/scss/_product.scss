@@ -26,8 +26,11 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    flex-shrink: 1;
+    width: 1200;
   }
   &-item {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     width: 300px;
@@ -61,6 +64,9 @@
     }
     &:hover &__header__image {
       animation: hoverOnProductImage 1s ease forwards;
+    }
+    &:hover &__content__name { 
+      color: #f3c11d;
     }
     &__content {
       flex: 1;
